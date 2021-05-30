@@ -36,6 +36,9 @@ abstract class PizzaStore {
 	abstract Pizza createPizza(String type);
 }
 
+/*
+ * NY Factory
+ */
 class NYPizzaStore extends PizzaStore {
 	Pizza createPizza(String item) {
 		if (item.equals("cheese")) {
@@ -51,6 +54,9 @@ class NYPizzaStore extends PizzaStore {
 	}
 }
 
+/*
+ * Chicago Factory
+ */
 class ChicagoPizzaStore extends PizzaStore {
 	Pizza createPizza(String item) {
 		if (item.equals("cheese")) {
@@ -67,7 +73,7 @@ class ChicagoPizzaStore extends PizzaStore {
 }
 
 /*
- * PRODUCT TO MAKE
+ * PRODUCTS TO MAKE
  */
 abstract class Pizza {
 	String name;
