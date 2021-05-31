@@ -20,7 +20,7 @@ public class BuildACar {
 		// The final product is often retrieved from a builder object, since
 		// Director is not aware and not dependent on concrete builders and
 		// products.
-		Car car = builder.getResult();
+		Car car = builder.createCar();
 		System.out.println("Car built: " + car.getCarType());
 		// if a field is not used in constructions it will be null
 		System.out.println("Car Transmission: " + car.getTransmission());
@@ -83,7 +83,7 @@ class CarBuilder implements Builder {
 	}
 
 	// create actual car by calling car class constructor
-	public Car getResult() {
+	public Car createCar() {
 		return new Car(type, seats, engine, transmission, tripComputer,
 				gpsNavigator);
 	}
