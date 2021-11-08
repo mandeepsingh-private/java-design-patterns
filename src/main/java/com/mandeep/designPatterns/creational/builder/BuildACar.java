@@ -9,18 +9,18 @@ package com.mandeep.designPatterns.creational.builder;
 public class BuildACar {
 
 	public static void main(String[] args) {
-		CarBuilder builder = new CarBuilder();
+		CarBuilder carBuilder = new CarBuilder();
 		// lets build a sport car
-		builder.setCarType(CarType.SPORTS_CAR);
-		builder.setSeats(2);
-		builder.setEngine(new Engine(3.0, 0));
+		carBuilder.setCarType(CarType.SPORTS_CAR);
+		carBuilder.setSeats(2);
+		carBuilder.setEngine(new Engine(3.0, 0));
 		// builder.setTransmission(Transmission.SEMI_AUTOMATIC);
-		builder.setTripComputer(new TripComputer());
-		builder.setGPSNavigator(new GPSNavigator());
+		carBuilder.setTripComputer(new TripComputer());
+		carBuilder.setGPSNavigator(new GPSNavigator());
 		// The final product is often retrieved from a builder object, since
 		// Director is not aware and not dependent on concrete builders and
 		// products.
-		Car car = builder.createCar();
+		Car car = carBuilder.createCar();
 		System.out.println("Car built: " + car.getCarType());
 		// if a field is not used in constructions it will be null
 		System.out.println("Car Transmission: " + car.getTransmission());
